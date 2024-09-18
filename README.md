@@ -1,5 +1,5 @@
 # Terminal Bookmark Manager
-
+### Keep It Stupid Simple
 A simple and efficient bookmark manager for the command line.
 
 ## Features
