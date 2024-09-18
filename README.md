@@ -5,6 +5,7 @@ A simple and efficient bookmark manager for the command line.
 ## Features
 
 - Search bookmarks using multiple terms
+- Add new bookmarks with multiple tags and categories
 - Matches against URLs, tags, and categories
 - Easy to use and integrate into your workflow
 
@@ -16,6 +17,8 @@ A simple and efficient bookmark manager for the command line.
 
 ## Usage
 
+### Searching Bookmarks
+
 To search for bookmarks, use the `bm` command followed by one or more search terms:
 
 ```
@@ -23,6 +26,16 @@ bm <search term1> <search term2> ...
 ```
 
 The search will match against URLs, tags, and categories.
+
+### Adding Bookmarks
+
+To add a new bookmark, use the `bm add` command followed by the URL, tags, and categories:
+
+```
+bm add <url> <tag1> <tag2> ... :: <category1> <category2> ...
+```
+
+Use `::` to separate tags from categories.
 
 ## Bookmark File Format
 
@@ -34,11 +47,11 @@ url, tags, categories
 
 Example:
 ```
-github.com, code repository, programming
-stackoverflow.com, q&a, programming
-medium.com, blog, writing
-spotify.com, music, streaming
-netflix.com, video, streaming
+github.com, code repository version-control, programming
+stackoverflow.com, q&a forum, programming
+medium.com, blog articles, writing
+spotify.com, music audio, streaming
+netflix.com, video movies series, streaming
 ```
 
 ## Examples
@@ -57,11 +70,18 @@ netflix.com, video, streaming
    netflix.com
    ```
 
+3. Add a new bookmark:
+   ```
+   $ bm add example.com example demo :: misc testing
+   Bookmark added successfully.
+   ```
+
 ## Notes
 
 - The search is case-sensitive.
 - Multiple search terms use AND logic (all terms must match).
 - If no matches are found, the script will display "No matching bookmarks found."
+- When adding bookmarks, use `::` to separate tags from categories.
 
 ## Customization
 
